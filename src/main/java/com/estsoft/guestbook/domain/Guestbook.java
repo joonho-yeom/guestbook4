@@ -29,7 +29,7 @@ public class Guestbook {
 	private String message;
 	
 	@Column( name = "passwd", nullable = false, length = 32 )
-	private String passsword;
+	private String password;
 	
 	@Column( name = "reg_date", nullable = false )
 	@Temporal( value = TemporalType.TIMESTAMP )
@@ -63,12 +63,12 @@ public class Guestbook {
 		this.message = message;
 	}
 
-	public String getPasssword() {
-		return passsword;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPasssword(String passsword) {
-		this.passsword = passsword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public Date getRegDate() {
@@ -81,7 +81,7 @@ public class Guestbook {
 
 	@Override
 	public String toString() {
-		return "Guestbook [no=" + no + ", name=" + name + ", message=" + message + ", passsword=" + passsword
+		return "Guestbook [no=" + no + ", name=" + name + ", message=" + message + ", password=" + password
 				+ ", regDate=" + regDate + "]";
 	}
 }

@@ -11,7 +11,7 @@
 <title>방명록</title>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath}/add" method="post">
+	<form action="${pageContext.request.contextPath}/insert" method="post">
 		<table border=1 width=500>
 			<tr>
 				<td>이름</td><td><input type="text" name="name"></td>

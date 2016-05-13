@@ -18,7 +18,7 @@ public class GuestbookController {
 	@Autowired
 	GuestbookService guestbookService;
 
-	@RequestMapping( "/" )
+	@RequestMapping("/")
 	public String index( Model model ) {
 		List<Guestbook> list = guestbookService.getMessageList();
 		model.addAttribute( "list", list );
@@ -34,21 +34,13 @@ public class GuestbookController {
 	@RequestMapping( "/delete" )
 	public String delete( @ModelAttribute Guestbook guestbook ) {
 		guestbookService.deleteMessage( guestbook );
-		return "redirect:/guestbook";
+		return "redirect:/";
 	}
 
 	@RequestMapping( "/insert" )
-	public String insert( @ModelAttribute Guestbook guestbook ) {
+	public String insert( @ModelAttribute Guestbook guestbook ) { //여기서 받아 아랫단에서 영속화가 일단 되면 여기서 수정해도 메모리에 먹힌다. 하지만 디비 반영은 서비스를 콜해야 된다.
 		guestbookService.insertMessage(guestbook);
-		return "redirect:/guestbook";
+		return "redirect:/";
 	}
 
-
-
-
-	
-
-
-
-	
 }
